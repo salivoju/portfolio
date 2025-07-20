@@ -1,0 +1,103 @@
+/* Projects Section - Horizontal Layout (Simplified) */
+
+.project-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Reverse Layout for Alternating Projects */
+.reverse-layout {
+  direction: rtl;
+}
+
+.reverse-layout > * {
+  direction: ltr;
+}
+
+.reverse-layout .project-image-section {
+  order: 2;
+}
+
+.reverse-layout .project-content-section {
+  order: 1;
+  text-align: left; /* ← FIXED: Always left-align text */
+}
+
+.reverse-layout .project-content-section .flex {
+  justify-content: flex-start; /* ← FIXED: Always align items to start */
+}
+
+/* Project Category Badge */
+.project-category-badge {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+/* Content Section */
+.project-content-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-container {
+    padding: 1.5rem 0;
+  }
+  
+  .reverse-layout {
+    direction: ltr;
+  }
+  
+  .reverse-layout .project-image-section {
+    order: 1;
+  }
+  
+  .reverse-layout .project-content-section {
+    order: 2;
+    text-align: left;
+  }
+  
+  .reverse-layout .project-content-section .flex {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-container {
+    margin-bottom: 3rem;
+  }
+  
+  .flex.gap-4 {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .flex.gap-4 a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Focus States for Accessibility */
+a:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .project-container {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  a {
+    border: 1px solid #000;
+    background: none;
+    color: #000;
+  }
+}

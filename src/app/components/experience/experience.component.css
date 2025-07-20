@@ -1,0 +1,230 @@
+/* Experience Section Styles */
+
+.section.experience {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.section.experience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(100, 255, 218, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(100, 255, 218, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(100, 255, 218, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Timeline Styles */
+.experience-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    var(--green) 10%, 
+    var(--slate) 50%, 
+    var(--green) 90%, 
+    transparent 100%
+  );
+  opacity: 0.3;
+}
+
+.timeline-item {
+  transform: translateY(50px) scale(0.95);
+  opacity: 0.7;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  z-index: 4;
+}
+
+/* Timeline Dot Animation */
+.timeline-dot {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7);
+  animation: pulse-dot 2s infinite;
+}
+
+.timeline-item.active .timeline-dot {
+  box-shadow: 0 0 0 10px rgba(100, 255, 218, 0.1);
+  background-color: var(--green);
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(100, 255, 218, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+  }
+}
+
+/* Content Card Styles */
+.timeline-content {
+  position: relative;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  background: linear-gradient(135deg, 
+    rgba(15, 23, 42, 0.8) 0%, 
+    rgba(30, 41, 59, 0.6) 100%
+  );
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.2) 0%, 
+    transparent 50%, 
+    rgba(100, 255, 218, 0.1) 100%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content::before {
+  opacity: 1;
+}
+
+/* Stacking Effect */
+.timeline-item:nth-child(even) .timeline-content {
+  background: linear-gradient(135deg, 
+    rgba(30, 41, 59, 0.8) 0%, 
+    rgba(15, 23, 42, 0.6) 100%
+  );
+}
+
+/* Tech Stack Styles */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tech-tag {
+  position: relative;
+  overflow: hidden;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(100, 255, 218, 0.2) 50%, 
+    transparent 100%
+  );
+  transition: left 0.5s ease;
+}
+
+.tech-tag:hover::before {
+  left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 3rem;
+  }
+  
+  .timeline-dot {
+    left: 1rem;
+  }
+  
+  .timeline-line {
+    left: 1.25rem;
+  }
+  
+  .timeline-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-item {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+  
+  .timeline-dot,
+  .timeline-line {
+    display: none;
+  }
+  
+  .tech-stack {
+    gap: 0.25rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Smooth scrolling enhancement */
+.section.experience {
+  scroll-margin-top: 2rem;
+}
+
+/* Print styles */
+@media print {
+  .timeline-line,
+  .timeline-dot {
+    display: none;
+  }
+  
+  .timeline-content {
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+  }
+  
+  .tech-tag {
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    color: black;
+  }
+}

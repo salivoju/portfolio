@@ -1,0 +1,53 @@
+<!-- Experience Section -->
+<section id="experience" class="section experience">
+    <div class="container max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <h2 class="section-title text-3xl font-bold text-green-400 mb-12 flex items-center" 
+            data-aos="fade-up" data-aos-delay="100">
+            Experience
+        </h2>
+        
+        <div class="experience-timeline relative">
+            <!-- Timeline line -->
+            <div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 bg-slate-700"></div>
+            
+            <div *ngFor="let exp of experiences; let i = index" 
+                 class="timeline-item relative mb-16 pl-20"
+                 [attr.data-aos]="'fade-up'"
+                 [attr.data-aos-delay]="(i + 1) * 200">
+                
+                <!-- Timeline dot -->
+                <div class="timeline-dot absolute left-6 top-6 w-4 h-4 bg-green-400 rounded-full border-4 border-black z-10"></div>
+                
+                <!-- Content card -->
+                <div class="timeline-content bg-gray-900/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8 hover:border-green-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-green-400/10">
+                    
+                    <h3 class="text-xl font-semibold text-lightest-slate mb-2 flex items-center">
+                        <!-- <span class="job-number text-green-400 font-mono text-sm mr-3 bg-green-400/10 px-2 py-1 rounded">
+                            ({{ exp.jobNumber }})
+                        </span> -->
+                        {{ exp.title }}
+                    </h3>
+                    
+                    <div class="company text-green-400 font-medium text-lg mb-1">
+                        {{ exp.company }}
+                    </div>
+                    
+                    <div class="period text-slate text-sm mb-4 font-mono">
+                        {{ exp.period }}
+                    </div>
+                    
+                    <p class="text-slate leading-relaxed mb-6">
+                        {{ exp.description }}
+                    </p>
+                    
+                    <div class="tech-stack flex flex-wrap gap-2">
+                        <span *ngFor="let tech of exp.techStack" 
+                              class="tech-tag bg-green-400/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium border border-green-400/20 hover:border-green-400/50 hover:bg-green-400/20 transition-all duration-200">
+                            {{ tech }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

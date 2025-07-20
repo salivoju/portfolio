@@ -1,0 +1,45 @@
+<!-- Skills Section - Advanced Layout -->
+<section id="skills" class="skills-section">
+    <div class="skills-container">
+        <h2 class="skills-title" data-aos="fade-up" data-aos-delay="100">
+            Skills
+        </h2>
+        
+        <div class="skills-categories">
+            <!-- Loop through each skill category -->
+            <div *ngFor="let category of skillCategories; let i = index" 
+                 class="skill-category-section"
+                 [attr.data-aos]="'fade-up'"
+                 [attr.data-aos-delay]="(i + 1) * 200">
+                
+                <!-- Category label on the left -->
+                <div class="category-label">
+                    {{ category.title }}
+                </div>
+                
+                <!-- Skills grid on the right -->
+                <div class="category-items">
+                    <div *ngFor="let skill of category.skills" class="skill-item-with-logo">
+                        <!-- Skill icon -->
+                        <div class="skill-logo-container">
+                            <!-- For emoji icons (Core CS Concepts) -->
+                            <div *ngIf="!skill.logo.includes('http')" 
+                                 class="skill-logo emoji-icon">
+                                {{ skill.logo }}
+                            </div>
+                            <!-- For image icons -->
+                            <img *ngIf="skill.logo.includes('http')" 
+                                 [src]="skill.logo" 
+                                 [alt]="skill.name"
+                                 class="skill-logo"
+                                 [class.invert]="skill?.isInvertLogo">
+                        </div>
+                        
+                        <!-- Skill name -->
+                        <span class="skill-name">{{ skill.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
