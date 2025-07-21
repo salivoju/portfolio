@@ -1,5 +1,9 @@
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000/api',
-  googleAnalyticsId: ''
+  googleAnalyticsId: '',
+  emailjs: {
+    serviceID: 'service_sukesh-portfolio', 
+    templateID: 'template_portfolio_cont',   
+    publicKey: 'sRR7MeJZ9fkmHKlaG'      
+  }
 };

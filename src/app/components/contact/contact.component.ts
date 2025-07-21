@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
         message: this.contactForm.value.message.trim()
       };
 
-      this.emailService.sebdEmail(formData).subscribe({
+      this.emailService.sendEmail(formData).subscribe({
         next: (response) => {
           this.uploadMessage = response.message || 'Thanks for reaching out! I\'ll get back to you soon.';
           this.isError = false;

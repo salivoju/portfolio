@@ -25,7 +25,7 @@ export class ExperienceComponent implements OnInit, OnDestroy, AfterViewInit {
       title: 'Software Engineer',
       company: 'Global Logic India Private Limited',
       period: 'July 2022 - November 2023',
-      description: 'Full-Stack Developer with proven experience migrating legacy monolithic systems to scalable microservices architecture, implementing end-to-end solutions from responsive React frontends to secure Spring Boot APIs deployed on cloud platforms.',
+      description: 'Experienced full-stack developer specializing in microservices architecture using Spring Boot/Java and ReactJS, with expertise in cloud deployment on Azure/AWS and CI/CD pipeline management. Proven track record in migrating legacy monolithic systems to scalable microservices and implementing secure authentication across distributed applications.',
       techStack: ['Java', 'Spring Boot', 'Nodejs', 'Docker', 'MongoDB', 'Microservices Architecture']
     },
     {
@@ -33,7 +33,7 @@ export class ExperienceComponent implements OnInit, OnDestroy, AfterViewInit {
       title: 'Programmer Analyst',
       company: 'Cognizant Technology Solutions',
       period: 'March 2021 - July 2022',
-      description: 'Java Developer experienced in building enterprise-grade web applications using Spring Boot and J2EE, with expertise in RESTful API design, application server management, and database optimization for high-performance systems.',
+      description: 'Enterprise Java developer with expertise in building multi-tier applications using Spring Boot, J2EE, and service-oriented architecture. Managed database optimization, application server deployments, and implemented comprehensive testing strategies to ensure high-performance, scalable systems.',
       techStack: ['Java', 'Spring Boot', 'RESTful APIs', 'SQL Server', 'J2EE Frameworks', 'Enterprise Application Server']
     },
     {
@@ -41,7 +41,7 @@ export class ExperienceComponent implements OnInit, OnDestroy, AfterViewInit {
       title: 'Programmer Analyst Trainee',
       company: 'Avon Technologies India Private Limited',
       period: 'January 2020 - February 2021',
-      description: 'Spring Boot Developer experienced in designing robust backend services with Java and Hibernate, implementing secure MySQL-based authentication systems, and managing complete software development lifecycles from design to deployment.',
+      description: 'Contributed to Spring Boot application development, building secure backend services using Java, Spring, Hibernate, and MySQL authentication. Gained hands-on experience in full SDLC phases, implementing DAO patterns, dependency injection, and frontend integration using Struts and Java web technologies.',
       techStack: ['Java', 'Spring Boot', 'Hibernate', 'MySQL', 'HTML', 'CSS', 'SDLC']
     }
   ];
