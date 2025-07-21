@@ -7,5 +7,5 @@ export const environment = {
     templateID: 'template_portfolio_cont',   
     publicKey: 'sRR7MeJZ9fkmHKlaG'      
   }
-}
+};
 
